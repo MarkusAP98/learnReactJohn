@@ -1,12 +1,11 @@
-import ListGroup from "./components/ListGroup"
+import { useState } from "react";
 
 function App() {
 
-  return (
-    <div className="App">
-      <ListGroup />
-    </div>
-  )
-}
+  return <div className="App text-center">
+    
+  </div>;
+} 
 
-export default App
+
+export default App;
