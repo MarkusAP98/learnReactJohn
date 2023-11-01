@@ -1,10 +1,12 @@
 import { useState } from "react";
-import Form from "./components/Form";
+import Shopping from "./components/Shopping";
+// import Form from "./components/Form";
 
 function App() {
 
   return <div className="">
-    <Form />
+    <Shopping />
+    {/* <Form /> */}
   </div>;
 } 
 
