@@ -1,9 +1,9 @@
 import { useState } from "react";
 import ExpanseList from "./expanse-tracker/ExpanseList";
-// import Shopping from "./components/Shopping";
-// import Form from "./components/Form";
+import ExpanseFilter from "./expanse-tracker/ExpanseFilter";
 
 function App() {
+  const [selectedCategory, setSelectedCategory] = useState<string>("");
   const [expenses, setExpenses] = useState([
     {
       id: 1,
@@ -31,12 +31,19 @@ function App() {
     },
   ]);
 
+  const visibleExpenses = selectedCategory
+    ? expenses.filter((e) => e.category === selectedCategory)
+    : expenses;
+
   return (
     <div className="">
-      {/* <Shopping /> */}
-      {/* <Form /> */}
+      <div className="mb-3">
+        <ExpanseFilter
+          onSelectCatergory={(category) => setSelectedCategory(category)}
+        />
+      </div>
       <ExpanseList
-        expenses={expenses}
+        expenses={visibleExpenses}
         onDelete={(id) => setExpenses(expenses.filter((e) => e.id !== id))}
       />
     </div>
