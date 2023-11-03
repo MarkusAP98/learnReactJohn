@@ -15,6 +15,7 @@ interface Props {
 // with interface we can define the type of the props that we are going to receive on this component and other components can use this component and pass the props to it. its like a variable that we can use in other components.
 
 const ExpanseList = ({expenses, onDelete}: Props) => {
+    if (expenses.length === 0) return null;
   return (
     <table className="table table-bordered">
         <thead>
