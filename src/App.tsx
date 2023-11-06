@@ -1,7 +1,9 @@
 import { useState } from "react";
 import ExpanseList from "./expanse-tracker/components/ExpanseList";
-
+import ExpenseFilter from "./expanse-tracker/components/ExpenseFilter";
 export const categories = ["Groceries", "Utilities", "Entertaiment"];
+
+
 
 function App() {
   const [expenses, setExpenses] = useState([
@@ -13,6 +15,7 @@ function App() {
 
   return (
     <div className="">
+      <ExpenseFilter onSelectedCategory={category => console.log(category)}/>
       <ExpanseList
         expenses={expenses}
         onDelete={(id) => setExpenses(expenses.filter((e) => e.id !== id))}
