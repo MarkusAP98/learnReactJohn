@@ -18,7 +18,7 @@ const ExpanseList = ({ expenses, onDelete }: Props) => {
   return (
     <table className="table table-bordered">
       <thead>
-        <tr>
+        <tr className="">
           <td>Description</td>
           <td>Amount</td>
           <td>Category</td>

@@ -17,17 +17,15 @@ function App({}) {
 
   return (
     <div>
-      <div className="md-3">
-        <ExpenseFilter
-          onSelectCategory={(category) => setSelectedCategory(category)}
-        />
-        <ExpanseList
-          expenses={visibleExpenses}
-          onDelete={(id) =>
-            SetExpenses(expenses.filter((expense) => expense.id !== id))
-          }
-        />
+      <div className="mb-3">
+        <ExpenseFilter onSelectCategory={(category) => setSelectedCategory(category)} />
       </div>
+      <ExpanseList
+        expenses={visibleExpenses}
+        onDelete={(id) =>
+          SetExpenses(expenses.filter((expense) => expense.id !== id))
+        }
+      />
     </div>
   );
 }
