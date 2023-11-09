@@ -2,7 +2,6 @@ import { useState } from "react";
 import ExpanseList from "./components/expanse-tracker/component/ExpanseList";
 import ExpenseFilter from "./components/expanse-tracker/component/ExpenseFilter";
 import ExpenseForm from "./components/expanse-tracker/component/ExpenseForm";
-import categories from "./components/expanse-tracker/component/categories";
 
 function App({}) {
   const [selectedCategory, setSelectedCategory] = useState("");
