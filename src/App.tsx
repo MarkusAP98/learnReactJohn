@@ -2,8 +2,7 @@ import { useState } from "react";
 import ExpanseList from "./components/expanse-tracker/component/ExpanseList";
 import ExpenseFilter from "./components/expanse-tracker/component/ExpenseFilter";
 import ExpenseForm from "./components/expanse-tracker/component/ExpenseForm";
-
-export const categories = ["Groceries", "Utilities", "Entertaiment"];
+import categories from "./components/expanse-tracker/component/categories";
 
 function App({}) {
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -21,10 +20,12 @@ function App({}) {
   return (
     <div>
       <div className="mb-5">
-        <ExpenseForm /> 
+        <ExpenseForm onSubmit={expense=> SetExpenses([...expenses, {...expense, id: expenses.length + 1 }])} />
       </div>
       <div className="mb-3">
-        <ExpenseFilter onSelectCategory={(category) => setSelectedCategory(category)} />
+        <ExpenseFilter
+          onSelectCategory={(category) => setSelectedCategory(category)}
+        />
       </div>
       <ExpanseList
         expenses={visibleExpenses}
