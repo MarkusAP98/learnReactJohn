@@ -1,10 +1,14 @@
-import React from "react";
-import Like from "./Like";
+import React, { useState } from "react";
+import Alert from "./components/Alert/Alert";
+import Button from "./components/Alert/Button";
+
 
 function App() {
+  const [show, setShow] = useState(false);
   return (
     <div>
-      <Like onClick={() => console.log("Clicked!")}></Like>
+      {show && <Alert onClick={() => setShow(false)} />}
+      <Button onClick={() => setShow(true)} />
     </div>
   );
 }
