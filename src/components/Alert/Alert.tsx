@@ -1,10 +1,10 @@
 import React from 'react'
 
 interface Props {
-    onClick?: () => void
+    onClick: () => void
 }
 
-const Alert = ({ onClick }: Props) => {
+const Alert = ({onClick}: Props) => {
   return (
     <div>
       <div className="alert alert-warning alert-dismissible fade show" role="alert">
