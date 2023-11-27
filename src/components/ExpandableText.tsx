@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
+
 interface Props {
   children: string;
-  maxChars?: number;
+  maxWords?: number;
 }
 
-const ExpandableText = ({ children, maxChars = 100}: Props) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-  if (children.length <= maxChars) return <p>{children}</p>; 
-  const text = isExpanded ? children : children.substring(0, maxChars);
-
+const ExpandableText = ({children, maxWords = 50}: Props) => {
+  const [expanded, setExpanded] = useState(false)
+  
+  if (children.length <= maxWords) return <p>{children}</p>;
+  const text = expanded ? children : children.substring(0, maxWords);
   return (
-    <p>{text}... <button onClick={() => setIsExpanded(!isExpanded)}>{isExpanded ? 'less' : 'more'}</button></p>
+    <p>{text}...<button onClick={() => setExpanded(!expanded)}>{expanded ? 'less' : 'more'}</button></p>
   )
 }
 
